@@ -1,0 +1,15 @@
+--uuid:2f9b1b1d-51c9-4030-8c6c-cdea86c86b71
+
+Content-Type: application/xop+xml; charset=UTF-8; type="text/xml"
+Content-Transfer-Encoding: binary
+Content-ID:<root.message@cxf.apache.org>
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Body>
+        <ns2:uploadFileResponse xmlns:ns2="http://service-test.com/">
+            <return>true</return>
+        </ns2:uploadFileResponse>
+    </soap:Body>
+</soap:Envelope>
+
+--uuid:2f9b1b1d-51c9-4030-8c6c-cdea86c86b71--

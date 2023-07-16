@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<!-- This service does not exist -->
+<!-- This WSDL was made just for demonstration purposes -->
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:tns="http://service-test.com/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="UploadFileService" targetNamespace="http://service-test.com/">
+
+    <wsdl:types>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            xmlns:tns="http://service-test.com/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://service-test.com/">
+            <xs:element name="uploadFile" type="tns:uploadFile"/>
+            <xs:element name="uploadFileResponse" type="tns:uploadFileResponse"/>
+
+            <xs:complexType name="uploadFile">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="arg0" type="tns:uploadFileWs"/>
+                </xs:sequence>
+            </xs:complexType>
+
+            <xs:complexType name="uploadFileWs">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="file" type="xs:base64Binary"/>
+                    <xs:element minOccurs="0" name="fileName" type="xs:string"/>
+                    <xs:element minOccurs="0" name="fileExtension" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+
+            <xs:complexType name="uploadFileResponse">
+                <xs:sequence>
+                    <xs:element name="return" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:complexType>
+
+            <xs:element name="UploadFileException" type="tns:UploadFileException"/>
+
+            <xs:complexType name="UploadFileException">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="message" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+
+    <wsdl:message name="uploadFile">
+        <wsdl:part element="tns:uploadFile" name="parameters"></wsdl:part>
+    </wsdl:message>
+
+    <wsdl:message name="uploadFileResponse">
+        <wsdl:part element="tns:uploadFileResponse" name="parameters"></wsdl:part>
+    </wsdl:message>
+
+    <wsdl:message name="UploadFileException">
+        <wsdl:part element="tns:UploadFileException" name="UploadFileException"></wsdl:part>
+    </wsdl:message>
+
+    <wsdl:portType name="UploadFileWs">
+        <wsdl:operation name="uploadFile">
+            <wsdl:input message="tns:uploadFile" name="uploadFile"></wsdl:input>
+            <wsdl:output message="tns:uploadFileResponse" name="uploadFileResponse"></wsdl:output>
+            <wsdl:fault message="tns:UploadFileException" name="UploadFileException"></wsdl:fault>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:binding name="UploadFileServiceSoapBinding" type="tns:UploadFileWs">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="uploadFile">
+            <soap:operation soapAction="" style="document"/>
+
+            <wsdl:input name="uploadFile">
+                <soap:body use="literal"/>
+            </wsdl:input>
+
+            <wsdl:output name="uploadFileResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+
+            <wsdl:fault name="UploadFileException">
+                <soap:fault name="UploadFileException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:service name="UploadFileService">
+        <wsdl:port binding="tns:UploadFileServiceSoapBinding" name="UploadFilePort">
+            <soap:address location="https://service-test.com/UploadFileWs"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
+

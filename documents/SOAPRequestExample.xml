@@ -1,0 +1,19 @@
+<!-- normal SOAP message, created by Zeep before being passed to the MTOMTransport class -->
+
+<?xml version= '1.0' encoding='utf-8'?>
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap-env:Body>
+        <ns0:uploadFile xmlns:ns0="http://service-test.com/">
+            <arg0>
+                <!-- file's Content-ID  is encoded to base64  -->
+                <file>
+                    PGluYzpJbmNsdWRlIGhyZWY9ImNpZDoxNjg4MjI1ODI0NDcuODAxNy4xMDk3M
+                    DI1MTAwNzI3OTUwNzU0OEBnYWJyaWVsLUluc3Bpcm9uLTU0NTgiLz4=
+                </file>
+                <fileName>python</fileName>
+                <fileExtension>pdf</fileExtension>
+            </arg0>
+        </ns0:uploadFile>
+    </soap-env:Body>
+</soap-env:Envelope>
+
