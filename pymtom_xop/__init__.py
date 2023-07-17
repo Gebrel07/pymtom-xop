@@ -2,7 +2,7 @@
     pymtom_xop
     ---------
 
-    Responsible for converting a basic SOAP message into a MTOM-XOP message.
+    Converts a basic SOAP message from Zeep into a MTOM-XOP package.
 
     Its classes are responsible for adapting the message body, and adding the \
     necessary HTTP headers before handling the message back to Zeep to be sent \

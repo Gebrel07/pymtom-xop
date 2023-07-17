@@ -13,6 +13,17 @@ class MtomTransport(Transport):
     Inherits from zeep.Transport
 
     Overrides the post_xml method from parent class
+
+    Methods:
+        - add_files: adds files to the MtomTransport
+        - update_headers: update the headers used in the request
+
+    Arguments from zeep.Transport:
+        :param cache: The cache object to be used to cache GET requests
+        :param timeout: The timeout for loading wsdl and xsd documents.
+        :param operation_timeout: The timeout for operations (POST/GET). By default this is None (no timeout).
+        :param session: A :py:class:`request.Session()` object (optional)
+
     """
 
     def __init__(self, cache=None, timeout=300, operation_timeout=None, session=None):

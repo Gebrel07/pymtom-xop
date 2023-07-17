@@ -17,6 +17,9 @@ class MtomAttachment:
         representation of the file's data
         - file_name (str, optional): name of the file (must contain file extension). \
         This is mandatory if the file argument is a BytesIO object.
+
+    Methods:
+        - get_cid (returns bytes): gets the object's Content-ID without < >
     """
 
     def __init__(self, file: str | BytesIO, file_name: str | None = None) -> None:
