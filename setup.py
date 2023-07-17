@@ -22,7 +22,7 @@ setup(
     ],
     keywords=["SOAP", "MTOM-XOP", "WebService"],
     python_requires=">=3.10",
-    install_requires=["zeep>=4.2"],
-    extras_require={"dev": ["pytest==7.4.0", "twine>=4.0.2"]},
+    install_requires=["zeep>=4.2.1"],
+    extras_require={"dev": ["pytest>=7.4.0", "twine>=4.0.2"]},
     packages=find_packages(include=["pymtom_xop"])
 )
