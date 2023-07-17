@@ -10,6 +10,14 @@ Its main actors are the MtomTransport and MtomAttachment classes.
 
 **MtomAttachment** is used to represent each file in the request body.
 
+## **Installation**
+``` bash
+# from PyPI
+pip install pymtom-xop
+
+# or from github
+pip install git+https://github.com/Gebrel07/pymtom-xop.git@main
+```
 
 ## **How to use**
 
